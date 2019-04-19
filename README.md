@@ -1,5 +1,5 @@
-# my-vimrc
-Personal repo with my .vimrc
+# my-vim
+Personal repo with my .vimrc, colorschemes, etc
 
 ### Requirements
 
