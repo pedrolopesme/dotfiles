@@ -2,7 +2,6 @@
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 set background=dark
-colorscheme hybrid_material
 
 " Editing
 set tabstop=2
@@ -12,6 +11,10 @@ set expandtab
 
 " Vim plugins
 call plug#begin('~/.vim/plugged')
+
+" Color scheme 
+Plug 'kristijanhusak/vim-hybrid-material'
+
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
 
@@ -76,3 +79,5 @@ map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 map <C-t> :tabedit<cr>
 
+" Applying colorscheme
+colorscheme snazzy 
