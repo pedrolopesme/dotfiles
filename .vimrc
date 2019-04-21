@@ -8,6 +8,7 @@ set tabstop=2
 filetype plugin indent on
 set shiftwidth=2
 set expandtab
+set noequalalways
 
 " Vim plugins
 call plug#begin('~/.vim/plugged')
@@ -67,6 +68,7 @@ function! DevMode()
 	let g:netrw_altv = 1
 	let g:netrw_winsize = 25
   let g:ackprg = 'ag --vimgrep'
+  set guioptions=
   :silent Vexplore
 	echom "DevMode turned on"
 endfunction
