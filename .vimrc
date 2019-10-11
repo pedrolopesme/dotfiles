@@ -56,6 +56,9 @@ Plug '/usr/local/opt/fzf'
 " ACK
 Plug 'mileszs/ack.vim'
 
+"Windowswap
+Plug 'wesQ3/vim-windowswap'
+
 " Initialize plugin system
 call plug#end()
 
@@ -80,6 +83,10 @@ map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 map <C-t> :tabedit<cr>
+
+"Window Swap
+nnoremap <silent> <leader>y :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <silent> <leader>p :call WindowSwap#DoWindowSwap()<CR>
 
 " Applying colorscheme
 colorscheme snazzy 
