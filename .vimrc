@@ -1,4 +1,3 @@
-c" Styling
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 set background=dark
