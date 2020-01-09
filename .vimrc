@@ -1,4 +1,4 @@
-" Styling
+c" Styling
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 set background=dark
@@ -9,12 +9,10 @@ filetype plugin indent on
 set shiftwidth=2
 set expandtab
 set noequalalways
+set foldcolumn=3
 
 " Vim plugins
 call plug#begin('~/.vim/plugged')
-
-" Color scheme 
-Plug 'kristijanhusak/vim-hybrid-material'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -89,4 +87,13 @@ nnoremap <silent> <leader>y :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>p :call WindowSwap#DoWindowSwap()<CR>
 
 " Applying colorscheme
-colorscheme snazzy 
+Plug 'tomasiser/vim-code-dark'
+Plug 'sainnhe/gruvbox-material'
+set t_Co=256
+syntax on
+syntax enable
+set termguicolors
+set background=dark
+let g:gruvbox_material_background = 'hard'
+colorscheme gruvbox-material
+
