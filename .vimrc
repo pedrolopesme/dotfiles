@@ -106,3 +106,10 @@ let g:material_terminal_italics = 1
 colorscheme material
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Adding option + arrow shortcuts
+:map <ESC>f el
+:imap <ESC>b <C-o>b
+:imap <ESC>f <C-o>e
+:cmap <ESC>f el
+
