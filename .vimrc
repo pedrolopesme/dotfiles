@@ -15,8 +15,20 @@ set mouse=a
 inoremap <A-Backspace> <C-w>
 cnoremap <A-Backspace> <C-w>
 
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>
+
 " Vim plugins
 call plug#begin('~/.vim/plugged')
+
+"Nerdtree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" GIT
+Plug 'tpope/vim-fugitive'
+
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -66,17 +78,20 @@ Plug 'wesQ3/vim-windowswap'
 " Initialize plugin system
 call plug#end()
 
+" NErdtree
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+map <C-n> :NERDTreeToggle<CR>
+set nu!
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
 "Dev Mode
 function! DevMode()
-	set nu!
-	let g:netrw_banner = 0
-	let g:netrw_liststyle = 3
-	let g:netrw_browse_split = 4
-	let g:netrw_altv = 1
-	let g:netrw_winsize = 25
-  let g:ackprg = 'ag --vimgrep'
-  set guioptions=
-  :silent Vexplore
 	echom "DevMode turned on"
 endfunction
 nmap <silent>  <C-p>  :call DevMode()<CR>
@@ -93,17 +108,12 @@ nnoremap <silent> <leader>y :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>p :call WindowSwap#DoWindowSwap()<CR>
 
 " Applying colorscheme
-" Plug 'tomasiser/vim-code-dark'
-Plug 'kaicataldo/material.vim'
-" set t_Co=256
 syntax on
 syntax enable
 if (has('termguicolors'))
   set termguicolors
 endif
-let g:material_theme_style = 'palenight'
-let g:material_terminal_italics = 1
-colorscheme material
+colorscheme archman
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
