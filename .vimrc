@@ -8,12 +8,15 @@ set shiftwidth=2
 set expandtab
 set noequalalways
 
-"Enabling Mouse Integration
+" Enabling Mouse Integration
 set mouse=a
 
 " Enabling command + delete 
 inoremap <A-Backspace> <C-w>
 cnoremap <A-Backspace> <C-w>
+
+" Enabling option + delete
+imap <Esc><BS> <C-w>
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
