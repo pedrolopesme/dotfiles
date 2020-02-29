@@ -49,6 +49,7 @@ Plug 'junegunn/fzf.vim'
 
 " Golang
 Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 " FZF
 Plug '/usr/local/opt/fzf'
@@ -83,3 +84,6 @@ map <C-t> :tabedit<cr>
 
 " Applying colorscheme
 colorscheme snazzy 
+
+" Fix backspace
+set backspace=indent,eol,start 
