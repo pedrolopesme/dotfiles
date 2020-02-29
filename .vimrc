@@ -1,7 +1,5 @@
-" Styling
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
-set background=dark
 
 " Editing
 set tabstop=2
@@ -10,14 +8,32 @@ set shiftwidth=2
 set expandtab
 set noequalalways
 
+"Enabling Mouse Integration
+set mouse=a
+
+" Enabling command + delete 
+inoremap <A-Backspace> <C-w>
+cnoremap <A-Backspace> <C-w>
+
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>
+
 " Vim plugins
 call plug#begin('~/.vim/plugged')
 
-" Color scheme 
-Plug 'kristijanhusak/vim-hybrid-material'
+"Nerdtree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" GIT
+Plug 'tpope/vim-fugitive'
+
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
+
+Plug 'vobornik/vim-mql4'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -57,20 +73,26 @@ Plug '/usr/local/opt/fzf'
 " ACK
 Plug 'mileszs/ack.vim'
 
+"Windowswap
+Plug 'wesQ3/vim-windowswap'
+
 " Initialize plugin system
 call plug#end()
 
+" NErdtree
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+map <C-n> :NERDTreeToggle<CR>
+set nu!
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
 "Dev Mode
 function! DevMode()
-	set nu!
-	let g:netrw_banner = 0
-	let g:netrw_liststyle = 3
-	let g:netrw_browse_split = 4
-	let g:netrw_altv = 1
-	let g:netrw_winsize = 25
-  let g:ackprg = 'ag --vimgrep'
-  set guioptions=
-  :silent Vexplore
 	echom "DevMode turned on"
 endfunction
 nmap <silent>  <C-p>  :call DevMode()<CR>
@@ -82,8 +104,26 @@ map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
 map <C-t> :tabedit<cr>
 
-" Applying colorscheme
-colorscheme snazzy 
+"Window Swap
+nnoremap <silent> <leader>y :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <silent> <leader>p :call WindowSwap#DoWindowSwap()<CR>
 
 " Fix backspace
 set backspace=indent,eol,start 
+syntax on
+syntax enable
+
+" Applying colorscheme
+if (has('termguicolors'))
+  set termguicolors
+endif
+colorscheme archman
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" Adding option + arrow shortcuts
+:map <ESC>f el
+:imap <ESC>b <C-o>b
+:imap <ESC>f <C-o>e
+:cmap <ESC>f el
+
