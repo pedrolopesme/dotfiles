@@ -25,9 +25,10 @@ nnoremap P P=`]<C-o>
 " Vim plugins
 call plug#begin('~/.vim/plugged')
 
-"Nerdtree
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Integrate with system cpliboard
+set clipboard=unnamed
+
+
 
 " GIT
 Plug 'tpope/vim-fugitive'
@@ -82,23 +83,18 @@ Plug 'wesQ3/vim-windowswap'
 " Initialize plugin system
 call plug#end()
 
-" NErdtree
-" autocmd vimenter * NERDTree
+"Nerdtree
+set clipboard=unnamed
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 map <C-n> :NERDTreeToggle<CR>
-set nu!
-
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-"Dev Mode
-function! DevMode()
-	echom "DevMode turned on"
-endfunction
-nmap <silent>  <C-p>  :call DevMode()<CR>
+" add line numbers
+set nu!
 
 "Tabs
 map <C-t><up> :tabr<cr>
