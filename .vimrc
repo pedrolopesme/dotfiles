@@ -132,3 +132,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " Initialize plugin system
 call plug#end()
 
+" Applying Theme Configs
+let g:seoul256_background = 233
+colo seoul256
+set background=dark
