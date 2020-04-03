@@ -22,76 +22,10 @@ imap <Esc><BS> <C-w>
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
-" Vim plugins
-call plug#begin('~/.vim/plugged')
-
 " Integrate with system cpliboard
 set clipboard=unnamed
 
 
-
-" GIT
-Plug 'tpope/vim-fugitive'
-
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-Plug 'vobornik/vim-mql4'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippet'
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
-" ZFZ
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-
-" Golang
-Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-
-" FZF
-Plug '/usr/local/opt/fzf'
-
-" ACK
-Plug 'mileszs/ack.vim'
-
-"Windowswap
-Plug 'wesQ3/vim-windowswap'
-
-" Initialize plugin system
-call plug#end()
-
-"Nerdtree
-set clipboard=unnamed
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-autocmd StdinReadPre * let s:std_in=1
-autocmd StdinReadPre * let s:std_in=1
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
 
 " add line numbers
 set nu!
@@ -125,4 +59,76 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 :imap <ESC>b <C-o>b
 :imap <ESC>f <C-o>e
 :cmap <ESC>f el
+
+
+"""""""""""""""""""""""""""""""""" 
+" Vim plugins via Plug
+"""""""""""""""""""""""""""""""""" 
+call plug#begin('~/.vim/plugged')
+
+" Applying defaults
+Plug 'tpope/vim-sensible'
+
+" Applying theme
+Plug 'junegunn/seoul256.vim'
+
+" GIT
+Plug 'tpope/vim-fugitive'
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+Plug 'vobornik/vim-mql4'
+
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' 
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+Plug '~/my-prototype-plugin'
+
+" ZFZ
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+" Golang
+Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
+
+" FZF
+Plug '/usr/local/opt/fzf'
+
+" ACK
+Plug 'mileszs/ack.vim'
+
+"Windowswap
+Plug 'wesQ3/vim-windowswap'
+
+" NerdTreee
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+set clipboard=unnamed
+autocmd StdinReadPre * let s:std_in=1
+autocmd StdinReadPre * let s:std_in=1
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" Initialize plugin system
+call plug#end()
 
