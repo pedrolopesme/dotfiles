@@ -1,6 +1,9 @@
 let g:enable_bold_font = 1
 let g:enable_italic_font = 1
 
+" Enconding
+set encoding=UTF-8
+
 " Editing
 set tabstop=2
 filetype plugin indent on
@@ -134,6 +137,22 @@ Plug 'itchyny/lightline.vim'
 
 "Gitgutter
 Plug 'airblade/vim-gitgutter'
+
+" Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+
+" Tag bar
+Plug 'majutsushi/tagbar'
+map <C-m> :TagbarToggle<CR>
+
+" Vim-Devicon
+Plug 'ryanoasis/vim-devicons'
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_tabline = 1
+set macligatures
+set guifont=Fira\ Code:h12
 
 " Initialize plugin system
 call plug#end()
