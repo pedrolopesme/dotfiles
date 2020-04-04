@@ -77,6 +77,9 @@ Plug 'junegunn/seoul256.vim'
 
 " GIT
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'zivyangll/git-blame.vim'
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'

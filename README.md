@@ -12,7 +12,6 @@ In order to work properly, you have to install:
 
 
 ### Shortcuts:
-
 * `Crtl + t` : Open new tab
 * `Ctrl + t + left/right` : navigate between tabs
 * `:FZF` : open search files by name
@@ -24,8 +23,18 @@ In order to work properly, you have to install:
 * `Control + N` : open Nerdtree 
 * `Control + M` : open Tagbar
 
-#### Golang Specifics
 
+#### GIT Specifics
+* `:Git <git commands like commit` : Git integration
+* `Gcommit` : shortcut to commit
+* `Gpush`: shortcut to push 
+* `Gpull`: shortcut to pull
+* `:GV` : show commit history
+* `<leader> s` : show inline git blame
+
+
+
+#### Golang Specifics
 * `space + a` : inspect code for errors
 * `gd` : go to defintion
 * `gy` : go to type defintion
