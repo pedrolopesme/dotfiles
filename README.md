@@ -19,8 +19,16 @@ In order to work properly, you have to install:
 * `:Ag` : open search files by content and name
 * `:split` and `: vsplit` : split current window
 * `Ctrl + w + left'/right/up/down` : navigate between window splits
-RRRRrtion + Del ` : delete word (backward)
 * `Command + Deleted ` : delete line (backward)
 * `Option + Delete` : delete word (backward)
 * `Control + N` : open Nerdtree 
 * `Control + M` : open Tagbar
+
+#### Golang Specifics
+
+* `space + a` : inspect code for errors
+* `gd` : go to defintion
+* `gy` : go to type defintion
+* `gi` : go to implementation
+* `gr` : get references 
+* `ctrl + o`: go back
