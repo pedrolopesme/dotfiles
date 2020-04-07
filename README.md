@@ -33,7 +33,6 @@ In order to work properly, you have to install:
 * `<leader> s` : show inline git blame
 
 
-
 #### Golang Specifics
 * `space + a` : inspect code for errors
 * `gd` : go to defintion
@@ -41,3 +40,23 @@ In order to work properly, you have to install:
 * `gi` : go to implementation
 * `gr` : get references 
 * `ctrl + o`: go back
+
+
+In order to have Coc running, you'll need to:
+```
+:CoConfig
+```
+and add:
+```
+{
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    }
+  }
+}
+```
+
+Also, you must have gopls in your GOBIN
