@@ -165,6 +165,13 @@ set guifont=Fira\ Code:h12
 " Initialize plugin system
 call plug#end()
 
+"Config Theme
+
+" Light color scheme
+let g:seoul256_background = 233
+colo seoul256
+
+" Switch
 set background=dark
 
 " -------------------------------------------------------------------------------------------------
