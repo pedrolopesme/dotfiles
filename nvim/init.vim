@@ -66,7 +66,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 """""""""""""""""""""""""""""""""" 
 " Vim plugins via Plug
 """""""""""""""""""""""""""""""""" 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/site/plugged')
 
 " Applying defaults
 Plug 'tpope/vim-sensible'
@@ -165,9 +165,6 @@ set guifont=Fira\ Code:h12
 " Initialize plugin system
 call plug#end()
 
-" Applying Theme Configs
-let g:seoul256_background = 233
-colo seoul256
 set background=dark
 
 " -------------------------------------------------------------------------------------------------
