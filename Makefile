@@ -6,3 +6,7 @@ install-nvim:
 
 install-tmux:
 	ln -s ${DIR}/tmux/.tmux.conf  ~/.tmux.conf
+
+install-zsh:
+	ln -s ${DIR}/zsh/.zshrc  ~/.zshrc
+
