@@ -119,3 +119,6 @@ export NVM_DIR="$HOME/.nvm"
 # Replacing VIM by NVIM
 alias vim="nvim"
 alias vi="nvim"
+
+# Open stuff on ubuntu like OSX
+alias open="xdg-open"
