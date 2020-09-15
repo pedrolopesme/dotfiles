@@ -9,7 +9,7 @@ In order to work properly, you have to install:
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 * ctags
 * [NerdFonts](https://github.com/ryanoasis/nerd-fonts)
-
+* [Oh my shell autosuggestions and syntax highlight](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
 
 ### Shortcuts:
 * `Crtl + t` : Open new tab
