@@ -130,6 +130,9 @@ Plug 'mileszs/ack.vim'
 "Windowswap
 Plug 'wesQ3/vim-windowswap'
 
+"Ag
+Plug 'numkil/ag.nvim'
+
 " NerdTreee
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
