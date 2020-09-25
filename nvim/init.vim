@@ -22,8 +22,8 @@ cnoremap <A-Backspace> <C-w>
 imap <Esc><BS> <C-w>
 
 " Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
+"nnoremap p p=`]<C-o>
+"nnoremap P P=`]<C-o>
 
 " Integrate with system cpliboard
 set clipboard=unnamed
@@ -153,10 +153,6 @@ Plug 'airblade/vim-gitgutter'
 " Indent guides
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
-
-" Tag bar
-Plug 'majutsushi/tagbar'
-map <C-m> :TagbarToggle<CR>
 
 " Vim-Devicon
 Plug 'ryanoasis/vim-devicons'
