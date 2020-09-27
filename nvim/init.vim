@@ -27,8 +27,10 @@ nnoremap P P=`]<C-o>
 
 " Integrate with system cpliboard
 set clipboard=unnamed
-
-
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 " add line numbers
 set nu!

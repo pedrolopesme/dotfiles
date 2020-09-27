@@ -122,3 +122,4 @@ alias vi="nvim"
 
 # Open stuff on ubuntu like OSX
 alias open="xdg-open"
+
