@@ -123,3 +123,5 @@ alias vi="nvim"
 # Open stuff on ubuntu like OSX
 alias open="xdg-open"
 
+# Fix Tilix new panel/tab issue
+. /etc/profile.d/vte-2.91.sh
