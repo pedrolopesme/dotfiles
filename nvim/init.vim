@@ -5,11 +5,11 @@ let g:enable_italic_font = 1
 set encoding=UTF-8
 
 " Editing
-"set tabstop=2
+set tabstop=2
 "filetype plugin indent on
-"set shiftwidth=2
-"set expandtab
-"set noequalalways
+set shiftwidth=2
+set expandtab
+set noequalalways
 set backspace=indent,eol,start
 
 " Enabling Mouse Integration
@@ -86,9 +86,6 @@ Plug 'vobornik/vim-mql4'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' 
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
