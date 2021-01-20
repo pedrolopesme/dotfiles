@@ -118,6 +118,12 @@ Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1        
 au filetype go inoremap <buffer> . .<C-x><C-o>
+let g:go_debug_windows = {
+      \ 'vars':       'rightbelow 60vnew',
+      \ 'stack':      'rightbelow 10new',
+\ }
+:nnoremap <leader>b :GoDebugBreakpoint<CR> 
+:nnoremap <leader>n :GoDebugContinue<CR>
 
 " FZF
 Plug '/usr/local/opt/fzf'
