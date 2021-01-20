@@ -103,15 +103,13 @@ let g:go_def_mapping_enabled = 0
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-" ZFZ
-Plug '/usr/local/opt/fzf'
+" FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf
 
 " Golang
 Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
@@ -125,11 +123,11 @@ let g:go_debug_windows = {
 :nnoremap <leader>b :GoDebugBreakpoint<CR> 
 :nnoremap <leader>n :GoDebugContinue<CR>
 
-" FZF
-Plug '/usr/local/opt/fzf'
-
 " ACK
 Plug 'mileszs/ack.vim'
+
+" Grepper
+Plug 'mhinz/vim-grepper'
 
 "Windowswap
 Plug 'wesQ3/vim-windowswap'

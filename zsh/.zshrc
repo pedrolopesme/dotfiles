@@ -125,3 +125,6 @@ alias open="xdg-open"
 
 # Fix Tilix new panel/tab issue
 . /etc/profile.d/vte-2.91.sh
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
