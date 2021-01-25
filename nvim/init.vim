@@ -6,10 +6,11 @@ set encoding=UTF-8
 
 " Editing
 set tabstop=2
-filetype plugin indent on
+"filetype plugin indent on
 set shiftwidth=2
 set expandtab
 set noequalalways
+set backspace=indent,eol,start
 
 " Enabling Mouse Integration
 set mouse=a
@@ -21,14 +22,12 @@ cnoremap <A-Backspace> <C-w>
 " Enabling option + delete
 imap <Esc><BS> <C-w>
 
-" Auto indent pasted text
-"nnoremap p p=`]<C-o>
-"nnoremap P P=`]<C-o>
-
 " Integrate with system cpliboard
 set clipboard=unnamed
-
-
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 " add line numbers
 set nu!
@@ -88,9 +87,6 @@ Plug 'vobornik/vim-mql4'
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' 
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -107,35 +103,31 @@ let g:go_def_mapping_enabled = 0
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-" ZFZ
-Plug '/usr/local/opt/fzf'
+" FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+set rtp+=/usr/local/opt/fzf
 
 " Golang
 Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
-Plug 'vim-syntastic/syntastic'
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" FZF
-Plug '/usr/local/opt/fzf'
+let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1        
+au filetype go inoremap <buffer> . .<C-x><C-o>
+let g:go_debug_windows = {
+      \ 'vars':       'rightbelow 60vnew',
+      \ 'stack':      'rightbelow 10new',
+\ }
+:nnoremap <leader>b :GoDebugBreakpoint<CR> 
+:nnoremap <leader>n :GoDebugContinue<CR>
 
 " ACK
 Plug 'mileszs/ack.vim'
+
+" Grepper
+Plug 'mhinz/vim-grepper'
 
 "Windowswap
 Plug 'wesQ3/vim-windowswap'
@@ -154,8 +146,8 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-"Add new status bar
-Plug 'itchyny/lightline.vim'
+" Tag line
+Plug 'vim-airline/vim-airline'
 
 "Gitgutter
 Plug 'airblade/vim-gitgutter'
@@ -197,14 +189,6 @@ set updatetime=300
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
