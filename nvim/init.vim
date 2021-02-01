@@ -110,6 +110,7 @@ Plug '~/my-prototype-plugin'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
+:nnoremap <leader>h :FZF<CR>
 
 " Golang
 Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
@@ -117,17 +118,25 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1        
 au filetype go inoremap <buffer> . .<C-x><C-o>
 let g:go_debug_windows = {
-      \ 'vars':       'rightbelow 60vnew',
-      \ 'stack':      'rightbelow 10new',
+      \ 'vars':       'rightbelow 50vnew',
+      \ 'stack':      'rightbelow 20new',
+      \ 'goroutines': 'topleft 40vnew',
+      \ 'out': 'botright new',
 \ }
+:nnoremap <leader>z :GoDebugStart<CR> 
+:nnoremap <leader>x :GoDebugStop<CR> 
+:nnoremap <leader>c :GoDebugStep<CR> 
+:nnoremap <leader>v :GoDebugStepout<CR> 
 :nnoremap <leader>b :GoDebugBreakpoint<CR> 
-:nnoremap <leader>n :GoDebugContinue<CR>
+:nnoremap <leader>n :GoDebugNext<CR>
+:nnoremap <leader>m :GoDebugContinue<CR>
 
 " ACK
 Plug 'mileszs/ack.vim'
 
 " Grepper
 Plug 'mhinz/vim-grepper'
+:nnoremap <leader>g :Grepper<CR>
 
 "Windowswap
 Plug 'wesQ3/vim-windowswap'
