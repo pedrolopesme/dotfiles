@@ -107,9 +107,9 @@ fi
 
 # TMUX
 # Opening tmux automatically
-#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#    tmux attach -t default || tmux new -s default
-#fi
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 
 # NODE
 export NVM_DIR="$HOME/.nvm"
