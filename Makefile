@@ -9,4 +9,5 @@ install-tmux:
 
 install-zsh:
 	ln -s ${DIR}/zsh/.zshrc  ~/.zshrc
+	ln -s ${DIR}/zsh/.p10k.zsh  ~/.p10k.zsh
 

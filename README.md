@@ -10,6 +10,12 @@ In order to work properly, you have to install:
 * ctags
 * [NerdFonts](https://github.com/ryanoasis/nerd-fonts)
 * [Oh my shell autosuggestions and syntax highlight](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
+* [Power10k](https://github.com/romkatv/powerlevel10k)
+
+#### Macos and TMUX at startup
+
+On Iterm2 Go to: Preferences > General > Profiles > Defaul > General > Command (Pick Command option) and type:
+`tmux new -s init`
 
 ### Shortcuts:
 * `Crtl + t` : Open new tab
