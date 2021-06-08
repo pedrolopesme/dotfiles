@@ -11,6 +11,7 @@ In order to work properly, you have to install:
 * [NerdFonts](https://github.com/ryanoasis/nerd-fonts)
 * [Oh my shell autosuggestions and syntax highlight](https://gist.github.com/dogrocker/1efb8fd9427779c827058f873b94df95)
 * [Power10k](https://github.com/romkatv/powerlevel10k)
+* [asdf](https://asdf-vm.com/)
 
 #### Macos and TMUX at startup
 

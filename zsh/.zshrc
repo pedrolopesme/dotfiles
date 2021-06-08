@@ -126,12 +126,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# GOENV
+eval "$(goenv init -)"
+
 # Replacing VIM by NVIM
 alias vim="nvim"
 alias vi="nvim"
 
 # Open stuff on ubuntu like OSX
-alias open="xdg-open"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias open="xdg-open"
+fi
 
 # Fix Tilix new panel/tab issue
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -146,3 +151,10 @@ fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+. /Users/pedro.mendes/.asdf/asdf.sh
+. /Users/pedro.mendes/.asdf/completions/asdf.bash
