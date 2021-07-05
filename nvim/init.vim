@@ -23,7 +23,7 @@ cnoremap <A-Backspace> <C-w>
 imap <Esc><BS> <C-w>
 
 " Integrate with system cpliboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
@@ -151,7 +151,6 @@ Plug 'numkil/ag.nvim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-set clipboard=unnamed
 autocmd StdinReadPre * let s:std_in=1
 autocmd StdinReadPre * let s:std_in=1
 map <C-n> :NERDTreeToggle<CR>
