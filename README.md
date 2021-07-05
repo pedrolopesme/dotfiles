@@ -67,3 +67,10 @@ and add:
 ```
 
 Also, you must have gopls in your GOBIN
+
+
+### Fixes and configs
+
+#### Tilix and Tmux sessions:
+
+https://unix.stackexchange.com/questions/585285/running-tmux-sessions-inside-tilix-terminal-emulator
