@@ -48,13 +48,6 @@ set backspace=indent,eol,start
 syntax on
 syntax enable
 
-" Applying colorscheme
-if (has('termguicolors'))
-  set termguicolors
-endif
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
 " Adding option + arrow shortcuts
 :map <ESC>f el
 :imap <ESC>b <C-o>b
@@ -174,17 +167,12 @@ let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_tabline = 1
 set guifont=Fira\ Code:h12
 
+" Theme
+Plug 'tomasiser/vim-code-dark'
+
 " Initialize plugin system
 call plug#end()
 
-"Config Theme
-
-" Light color scheme
-let g:seoul256_background = 233
-colo seoul256
-
-" Switch
-set background=dark
 
 " -------------------------------------------------------------------------------------------------
 " coc.nvim default settings
@@ -244,3 +232,15 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Applying colorscheme
+colorscheme codedark
+let g:airline_theme = 'codedark'
+
+if (has('termguicolors'))
+  set termguicolors
+endif
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+

@@ -97,6 +97,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# ASDF
+. ~/.asdf/asdf.sh
+. ~/.asdf/completions/asdf.bash
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -153,5 +157,4 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 export PATH="$PATH:$HOME/.rvm/bin"
 
 
-. ~/.asdf/asdf.sh
-. ~/.asdf/completions/asdf.bash
+
