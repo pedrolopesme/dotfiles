@@ -156,5 +156,8 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-
-
+# jump words (opt + arrow keys
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
