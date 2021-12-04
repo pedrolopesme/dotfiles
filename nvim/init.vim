@@ -126,6 +126,8 @@ let g:go_debug_windows = {
 :nnoremap <leader>b :GoDebugBreakpoint<CR> 
 :nnoremap <leader>n :GoDebugNext<CR>
 :nnoremap <leader>m :GoDebugContinue<CR>
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " ACK
 Plug 'mileszs/ack.vim'
