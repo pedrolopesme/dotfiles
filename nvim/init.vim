@@ -32,27 +32,9 @@ imap <C-v> <ESC>"+pa
 " add line numbers
 set nu!
 
-"Tabs
-map <C-t><up> :tabr<cr>
-map <C-t><down> :tabl<cr>
-map <C-t><left> :tabp<cr>
-map <C-t><right> :tabn<cr>
-map <C-t> :tabedit<cr>
-
-"Window Swap
-nnoremap <silent> <leader>y :call WindowSwap#MarkWindowSwap()<CR>
-nnoremap <silent> <leader>p :call WindowSwap#DoWindowSwap()<CR>
-
 " Fix backspace
-set backspace=indent,eol,start 
 syntax on
 syntax enable
-
-" Adding option + arrow shortcuts
-:map <ESC>f el
-:imap <ESC>b <C-o>b
-:imap <ESC>f <C-o>e
-:cmap <ESC>f el
 
 
 """""""""""""""""""""""""""""""""" 
@@ -107,6 +89,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 set rtp+=/usr/local/opt/fzf
 :nnoremap <leader>h :FZF<CR>
+
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Golang
 Plug 'fatih/vim-go', { 'do' : ':GoUpdateBinaries' }
@@ -245,4 +229,4 @@ endif
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-
+nnoremap <silent> <cmd>p :Telescope find_files<cr>

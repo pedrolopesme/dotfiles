@@ -20,13 +20,10 @@ On Iterm2 Go to: Preferences > General > Profiles > Defaul > General > Command (
 
 ### Shortcuts:
 * `Crtl + t` : Open new tab
-* `Ctrl + t + left/right` : navigate between tabs
 * `:FZF` : open search files by name
 * `:Ag` : open search files by content and name
 * `:split` and `: vsplit` : split current window
-* `Ctrl + w + left'/right/up/down` : navigate between window splits
 * `Command + Deleted ` : delete line (backward)
-* `Option + Delete` : delete word (backward)
 * `Control + N` : open Nerdtree 
 * `Control + M` : open Tagbar
 
